@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zana Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <style>
+
+        /* Navigation Bar */
+     
+        nav {
+            position: relative;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Dropdown for smaller screens */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #333;
+            padding: 1rem 0;
+            text-align: center;
+            z-index: 999;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 0.5rem 0;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .dropdown a:hover {
+            color: #f80576;
+        }
+
+        /* Image Gallery */
+        .scroll-container {
+            margin-top: 100px; /* Prevent overlap with navbar */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 2rem;
+        }
+
+        .scroll-container img {
+            width: 800px; /* Large width for images */
+            height: 400px; /* Large height for images */
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .scroll-container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav .links {
+                display: none;
+            }
+
+            nav .hamburg {
+                display: block;
+            }
+
+            .dropdown {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        
+    </style>
+    
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Zana</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="about.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="educational.html">Educational Background</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="gallery.html">Gallery</a></div>
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="contact.html">Contact</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="educational.html">Educational Background</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+                
+            </div>
+        </div>
+    </nav>
+    <div class="dropdown">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="educational.html">Education</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <i class="fa-solid fa-xmark cancel" onclick="toggleDropdown()"></i>
+    </div>
+<body>
+    <section id="about" class="about">
+        <div class="about-img">
+            <video autoplay loop controls class="about-video">
+                <source src="zyu.mp4" type="video/mp4"> 
+                Your browser does not support the video tag.
+            </video>
+            
+        </div>
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>Dyg<span>Nurshazana</span></h3>
+    
+            <!-- Age, Full Name, Location and other details -->
+            <div class="info">
+                <p><strong>Full Name:</strong> Dayang Nur'Shazana Zafira</p>
+                <p><strong>Nickname:</strong> Zana</p>
+                <p><strong>Age:</strong> 21 years old</p>
+                <p><strong>Location:</strong> Kuching, Malaysia</p>
+                <p><strong>Hobbies:</strong> Taking Pictures</p>
+                
+            </div>
+    
+            <p>"Believe you can, and you're halfway there." – Theodore Roosevelt</p>
+    
+            <div class="btn">
+                <a href="music.html" class="button-link">Zana's Playlist</a>
+            </div>        
+        </div>
+
+<style>
+  /* About Section Styling */
+  .about {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, rgba(255, 204, 153, 0.8), rgba(255, 204, 204, 0.8));
+      gap: 60px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .about-img video {
+      width: 100%;
+      max-width: 400px; /* Keeps the video width from getting too big */
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      object-fit: cover; /* Ensures the video covers the area without stretching */
+      opacity: 0;
+      transform: translateX(-50px);
+      animation: fadeInImage 1s ease-out forwards;
+  }
+
+  .about-content {
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInContent 1s ease-out forwards;
+  }
+
+  .about-content .heading {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #333;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .about-content h3 {
+      font-size: 2rem;
+      color: #444;
+      margin: 20px 0;
+  }
+
+  .about-content .info {
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      padding: 0 15px;
+      text-align: left;
+  }
+
+  .about-content .info p {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInInfo 1s ease-out forwards;
+      animation-delay: 0.5s;
+  }
+  .about-content .btn a {
+      padding: 12px 25px;
+      background: #f80576;
+      color: white;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      margin-top: 20px;
+      display: inline-block;
+  }
+  .about-content .btn a:hover {
+      background: #f03a63;
+      transform: translateY(-5px);
+  }
+
+
+
+  /* Animation Keyframes */
+  @keyframes fadeInImage {
+      from {
+          opacity: 0;
+          transform: translateX(-50px);
+      }
+      to {
+          opacity: 1;
+          transform: translateX(0);
+      }
+  }
+
+  @keyframes fadeInContent {
+      from {
+          opacity: 0;
+          transform: translateY(30px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  @keyframes fadeInInfo {
+      from {
+          opacity: 0;
+          transform: translateY(30px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+</style>
+</section>
+
+<!-- Footer Section -->
+<footer style="background: #333; color: #fff; padding: 2rem 0; text-align: center; margin-top: 2rem;">
+    <div class="footer-container" style="max-width: 1200px; margin: 0 auto;">
+        <!-- Social Media Links -->
+        <div class="social-media" style="margin-bottom: 1rem;">
+            <a href="https://www.tiktok.com/@bbybeargyu?_t=ZS-8t4zIDHz8l7&_r=1" target="_blank" style="margin: 0 1rem; color: #fff; font-size: 1.5rem; text-decoration: none;">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.tiktok.com/@bbybeargyu?_t=ZS-8t24unUa3Yj&_r=1" target="_blank" style="margin: 0 1rem; color: #fff; font-size: 1.5rem; text-decoration: none;">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="footer-links" style="margin-bottom: 1rem;">
+            <a href="index.html" style="margin: 0 1rem; color: #fff; text-decoration: none;">Home</a>
+            <a href="about.html" style="margin: 0 1rem; color: #fff; text-decoration: none;">About</a>
+            <a href="educational.html" style="margin: 0 1rem; color: #fff; text-decoration: none;">Education</a>
+            <a href="gallery.html" style="margin: 0 1rem; color: #fff; text-decoration: none;">Gallery</a>
+            <a href="contact.html" style="margin: 0 1rem; color: #fff; text-decoration: none;">Contact</a>
+        </div>
+
+        <!-- Copyright Text -->
+        <div class="copyright" style="font-size: 0.9rem;">
+            <p>&copy; 2025 Zana Portfolio. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>

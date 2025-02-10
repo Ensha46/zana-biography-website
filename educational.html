@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zana Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <style>
+
+        /* Navigation Bar */
+     
+        nav {
+            position: relative;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Dropdown for smaller screens */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #333;
+            padding: 1rem 0;
+            text-align: center;
+            z-index: 999;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 0.5rem 0;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .dropdown a:hover {
+            color: #f80576;
+        }
+
+          /* Responsive Design */
+          @media (max-width: 768px) {
+            nav .links {
+                display: none;
+            }
+
+            nav .hamburg {
+                display: block;
+            }
+
+            .dropdown {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Zana</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="about.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="educational.html">Educational Background</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="gallery.html">Gallery</a></div>
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="contact.html">Contact </a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="educational.html">Educational Background</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact </a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+    <div class="dropdown">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="educational.html">Education</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        
+    </div>
+
+    <body>
+        <body>
+            <section id="educational" class="educational">
+                <h2 class="heading">Educational</h2>
+                <div class="image-container">
+                    <!-- First Image with Link and Text -->
+                    <a href="https://sktassuda.org/" target="_blank" class="image-link">
+                        <img src="Sk.png" alt="Sekolah Kebangsaan Gita" class="educational-img">
+                        <p class="image-text">SK Tan Sri Dr Sulaiman Hj Daud</p>
+                    </a>
+        
+                    <!-- Second Image with Link and Text -->
+                    <a href="https://starkch.edupage.org/" target="_blank" class="image-link">
+                        <img src="smkjpg.jpg" alt="Sekolah Menengah Kebangsaan" class="educational-img">
+                        <p class="image-text">Sekolah Menengah Kebangsaan</p>
+                    </a>
+        
+                    <!-- Third Image with Link and Text -->
+                    <a href="https://uitm.edu.my/" target="_blank" class="image-link">
+                        <img src="uitm.png" alt="Universiti Teknologi MARA" class="educational-img">
+                        <p class="image-text">Universiti Teknologi MARA</p>
+                    </a>
+                </div>
+            </section>
+        </body>
+        
+
+        <style>
+/* Educational Section Styles */
+.educational {
+    padding: 4rem 2rem;
+    background-color: #fff7f9;
+    text-align: center;
+}
+
+.educational .heading {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.educational .heading::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #f80576;
+    margin: 1rem auto 0;
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3rem;
+    justify-items: center;  /* Centers the images horizontally */
+    align-items: center;    /* Centers the images vertically */
+    max-width: 1200px;      /* Optional, restricts the max width for better layout */
+    margin: 0 auto;         /* Centers the entire grid horizontally */
+}
+
+.image-link {
+    display: flex;
+    flex-direction: column; /* Stack the image and text vertically */
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px;          /* Optional, adds padding around the content */
+}
+
+.educational-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-text {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;      /* Ensures text is centered under each image */
+}
+
+/* Hover effects for images */
+.image-link:hover .educational-img {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effects for text */
+.image-link:hover .image-text {
+    color: #f80576; /* Change text color on hover */
+}
+
+/* Animation for the Educational Section */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply fade-in animation */
+.educational h2 {
+    animation: fadeInUp 1s ease-out;
+}
+
+.image-container a {
+    animation: fadeInUp 1s ease-out;
+}
+
+.image-container a:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.image-container a:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.image-container a:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Responsiveness for Smaller Screens */
+@media (max-width: 768px) {
+    .image-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+</style>
+<!-- Footer Section -->
+<footer style="background: #333; color: #fff; padding: 2rem 0; text-align: center; margin-top: 2rem;">
+    <div class="footer-container" style="max-width: 1200px; margin: 0 auto;">
+        <!-- Social Media Links -->
+        <div class="social-media" style="margin-bottom: 1rem;">
+            <a href="https://www.tiktok.com/@bbybeargyu?_t=ZS-8t4zIDHz8l7&_r=1" target="_blank" style="margin: 0 1rem; color: #fff; font-size: 1.5rem; text-decoration: none;">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.tiktok.com/@bbybeargyu?_t=ZS-8t24unUa3Yj&_r=1" target="_blank" style="margin: 0 1rem; color: #fff; font-size: 1.5rem; text-decoration: none;">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="footer-links" style="margin-bottom: 1rem;">
+            <a href="index.html" style="margin: 0 1rem; color: #fff; text-decoration: none;">Home</a>
+            <a href="about.html" style="margin: 0 1rem; color: #fff; text-decoration: none;">About</a>
+            <a href="educational.html" style="margin: 0 1rem; color: #fff; text-decoration: none;">Education</a>
+            <a href="gallery.html" style="margin: 0 1rem; color: #fff; text-decoration: none;">Gallery</a>
+            <a href="contact.html" style="margin: 0 1rem; color: #fff; text-decoration: none;">Contact</a>
+        </div>
+
+        <!-- Copyright Text -->
+        <div class="copyright" style="font-size: 0.9rem;">
+            <p>&copy; 2025 Zana Portfolio. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>

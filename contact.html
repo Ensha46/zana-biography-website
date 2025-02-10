@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zana Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #f80576;
+        }
+
+        .links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .link a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .link a:hover {
+            color: #f80576;
+        }
+
+        /* Dropdown for smaller screens */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            z-index: 999;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 0.5rem 0;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .dropdown a:hover {
+            color: #f80576;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav .links {
+                display: none;
+            }
+
+            nav .hamburg {
+                display: block;
+            }
+
+            .dropdown {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Heading */
+        h1.heading {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            margin: 2rem 0;
+        }
+
+        h1.heading span {
+            color: #f80576;
+        }
+
+        /* Contact Form Styling */
+        .contact {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact form .box {
+            width: 100%;
+            padding: 1rem;
+            margin: 0;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact form .box:focus {
+            border-color: #f80576;
+            outline: none;
+        }
+
+        .contact form .btn {
+            display: inline-block;
+            padding: 1rem;
+            background: #f80576;
+            color: white;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-align: center;
+        }
+
+        .contact form .btn:hover {
+            background: #d10466;
+        }
+
+        .contact .image {
+            display: none;
+        }
+
+        /* Footer */
+        footer {
+            background: #353333;
+            color: #ffffff;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        .social-media a {
+            margin: 0 1rem;
+            color: #fef9f9;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        .footer-links a {
+            margin: 0 1rem;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Zana</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="about.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="educational.html">Educational Background</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="gallery.html">Gallery</a></div>
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="contact.html">Contact</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+    </nav>
+
+    <!-- Contact Form -->
+    <div class="contact">
+        <h1 class="heading">Contact</span></h1>
+        <form id="contact-form" action="javascript:void(0);">
+            <input type="text" placeholder="Name" class="box" id="name" required>
+            <input type="email" placeholder="Email" class="box" id="email" required>
+            <input type="number" placeholder="Phone Number" class="box" id="number" required>
+            <textarea placeholder="Your Message" class="box" id="message" cols="30" rows="10" required></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <!-- Social Media Links -->
+            <div class="social-media">
+                <a href="https://www.tiktok.com/@bbybeargyu?_t=ZS-8t4zIDHz8l7&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.tiktok.com/@bbybeargyu?_t=ZS-8t24unUa3Yj&_r=1" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="educational.html">Education</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <!-- Copyright Text -->
+            <div class="copyright">
+                <p>&copy; 2025 Zana Portfolio. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const number = document.getElementById('number').value;
+            const message = document.getElementById('message').value;
+            if (name && email && number && message) {
+                alert(`Message Successfully Sent!\n\nDetails:\nName: ${name}\nEmail: ${email}\nPhone Number: ${number}\nMessage: ${message}`);
+                form.reset();
+            } else {
+                alert('Please fill in all fields before submitting.');
+            }
+        });
+    </script>
+</body>
+</html>

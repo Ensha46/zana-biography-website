@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zana Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; /* Dark Background */
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .playlist-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: #181818; /* Dark Spotify Background */
+            border-radius: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+            width: 90%;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .playlist-slide .heading {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: bold;
+            color: #ff81a9; /* Spotify Green */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .slide-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .song-list {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .song-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            background-color: #282828; /* Darker Card Background */
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .song-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(237, 125, 131, 0.5); /* Spotify Green hover effect */
+        }
+
+        .song-image {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .song-image:hover {
+            transform: scale(1.1);
+        }
+
+        .song {
+            background: #df718e; /* Spotify Green */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .song:hover {
+            background: #e46f87; /* Lighter Green on Hover */
+            transform: scale(1.05);
+        }
+
+        .audio-player {
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        audio {
+            width: 100%;
+            border-radius: 8px;
+            background: #e6a6ac; /* Spotify Green Audio Player */
+            color: #fff;
+        }
+
+        .next-button {
+            background-color: #df718e; /* Spotify Green */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .next-button:hover {
+            background-color: #e46f87; /* Lighter Green */
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #121212;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-media {
+            margin-bottom: 1rem;
+        }
+
+        .social-media a {
+            margin: 0 1rem;
+            color: #fff;
+            font-size: 1.8rem;
+            text-decoration: none;
+        }
+
+        .footer-links a {
+            margin: 0 1rem;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <section id="music-section" class="playlist-slide">
+        <h2 class="heading">🎵 Favorite <span>Music</span></h2>
+        <div class="slide-container">
+            <div class="song-list">
+                <!-- Song 1 -->
+                <div class="song-item">
+                    <img src="som.jpeg" alt="Song 1" class="song-image" />
+                    <button class="song" onclick="playSong('pulang.mp3', 0)">Pulang - Insomniacks</button>
+                </div>
+                <!-- Song 2 -->
+                <div class="song-item">
+                    <img src="an.jpeg" alt="Song 2" class="song-image" />
+                    <button class="song" onclick="playSong('Bun.mp3', 1)">Janji - Aziz Harun</button>
+                </div>
+                <!-- Song 3 -->
+                <div class="song-item">
+                    <img src="na.jpeg" alt="Song 3" class="song-image" />
+                    <button class="song" onclick="playSong('Sem.mp3', 2)">Sempurna - Insomniacks</button>
+                </div>
+                <!-- Song 4 -->
+                <div class="song-item">
+                    <img src="m.jpeg" alt="Song 4" class="song-image" />
+                    <button class="song" onclick="playSong('Jan.mp3', 3)">Bunga Maaf - The Lantis</button>
+                </div>
+            </div>
+            <div class="audio-player">
+                <audio id="audio-player" controls>
+                    <source id="audio-source" src="song1.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <button class="next-button" onclick="nextSong()">Next</button>
+        </div>
+    </section>
+
+    <script>
+        const songs = [
+            { file: 'pulang.mp3', title: 'Pulang - Insomniacks' },
+            { file: 'Bun.mp3', title: 'Janji - Aziz Harun' },
+            { file: 'Sem.mp3', title: 'Sempurna - Insomniacks' },
+            { file: 'Jan.mp3', title: 'Bunga Maaf - The Lantis' }
+        ];
+
+        let currentSongIndex = 0;
+
+        function playSong(songFile, index) {
+            const audioPlayer = document.getElementById("audio-player");
+            const audioSource = document.getElementById("audio-source");
+
+            // Update the source of the audio player
+            audioSource.src = songFile;
+
+            // Set current song index
+            currentSongIndex = index;
+
+            // Reload and play the selected song
+            audioPlayer.load();
+            audioPlayer.play();
+        }
+
+        function nextSong() {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            playSong(songs[currentSongIndex].file, currentSongIndex);
+        }
+    </script>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <!-- Social Media Links -->
+            <div class="social-media">
+                <a href="https://www.tiktok.com/@bbybeargyu?_t=ZS-8t4zIDHz8l7&_r=1" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.tiktok.com/@bbybeargyu?_t=ZS-8t24unUa3Yj&_r=1" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="educational.html">Education</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <!-- Copyright Text -->
+            <div class="copyright">
+                <p>&copy; 2025 Zana Portfolio. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zana Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <style>
+
+       /* Navigation Bar */
+     
+       nav {
+            position: relative;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(254, 254, 254, 0.1);
+            padding: 3rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 3.5rem; /* Increased font size */
+            font-weight: bold;
+            color: #333;
+        }
+
+        .links .link a {
+            font-size: 2.6rem; /* Increased font size */
+            color: #333;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        .links .link a:hover {
+            color: #f80576;
+        }
+
+        /* Dropdown for smaller screens */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #333;
+            padding: 1rem 0;
+            text-align: center;
+            z-index: 999;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 0.5rem 0;
+            font-size: 1.6rem; /* Increased font size */
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .dropdown a:hover {
+            color: #f80576;
+        }
+
+        /* Image Gallery */
+        .scroll-container {
+            margin-top: 100px; /* Prevent overlap with navbar */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 2rem;
+        }
+
+        .scroll-container img {
+            width: 800px; /* Large width for images */
+            height: 400px; /* Large height for images */
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .scroll-container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav .links {
+                display: none;
+            }
+
+            nav .hamburg {
+                display: block;
+            }
+
+            .dropdown {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Zana</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="about.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="educational.html">Educational Background</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="gallery.html">Gallery</a></div>
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="contact.html">Contact</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="educational.html">Educational Background</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+    <div class="dropdown">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="educational.html">Education</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <i class="fa-solid fa-xmark cancel" onclick="toggleDropdown()"></i>
+    </div>
+
+    <!-- Image Gallery -->
+    <div class="scroll-container">
+        <img src="jh.jpeg" alt="Image 1">
+        <img src="K.jpeg" alt="Image 2">
+        <img src="z.jpeg" alt="Image 3">
+        <img src="y.jpeg" alt="Image 4">
+        <img src="zz.jpeg" alt="Image 5">
+        <img src="jj.jpeg" alt="Image 6">
+        <img src="pp.jpeg" alt="Image 7">
+        <img src="kl.jpeg" alt="Image 7">
+        <img src="pl.jpeg" alt="Image 7">
+    </div>
+<style>
+   /* Gallery Section Styling */
+  .gallery {
+      text-align: center;
+      padding: 50px 20px;
+      background: #f4f4f4;
+      border-top: 5px solid #ccc;
+      margin-top: 30px;
+  }
+
+  .gallery .heading {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #e79f9f;
+      margin-bottom: 40px;
+  }
+
+  .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+  }
+
+  .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(211, 172, 172, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .gallery-item img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+  }
+
+  .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .gallery-item:hover img {
+      transform: scale(1.1);
+  }
+
+  /* Animation on page load */
+  .gallery-item {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.5s forwards;
+  }
+
+  .gallery-item:nth-child(1) {
+      animation-delay: 0.2s;
+  }
+
+  .gallery-item:nth-child(2) {
+      animation-delay: 0.4s;
+  }
+
+  .gallery-item:nth-child(3) {
+      animation-delay: 0.6s;
+  }
+
+  .gallery-item:nth-child(4) {
+      animation-delay: 0.8s;
+  }
+
+  .gallery-item:nth-child(5) {
+      animation-delay: 1s;
+  }
+
+  .gallery-item:nth-child(6) {
+      animation-delay: 1.2s;
+  }
+
+  /* Fade In Up Animation */
+  @keyframes fadeInUp {
+      from {
+          opacity: 0;
+          transform: translateY(20px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+  </style>
+
+
+       <!-- Footer Section -->
+<footer style="background: #333; color: #fff; padding: 4rem 0; text-align: center; margin-top: 2rem; font-size: 1.2rem;">
+    <div class="footer-container" style="max-width: 1200px; margin: 0 auto;">
+        <!-- Social Media Links -->
+        <div class="social-media" style="margin-bottom: 2rem;">
+            <a href="https://www.tiktok.com/@bbybeargyu?_t=ZS-8t4zIDHz8l7&_r=1" target="_blank" style="margin: 0 1.5rem; color: #fff; font-size: 3rem; text-decoration: none;">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.tiktok.com/@bbybeargyu?_t=ZS-8t24unUa3Yj&_r=1" target="_blank" style="margin: 0 1.5rem; color: #fff; font-size: 3rem; text-decoration: none;">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="footer-links" style="margin-bottom: 2rem;">
+            <a href="index.html" style="margin: 0 1.5rem; color: #fff; font-size: 1.8rem; text-decoration: none;">Home</a>
+            <a href="about.html" style="margin: 0 1.5rem; color: #fff; font-size: 1.8rem; text-decoration: none;">About</a>
+            <a href="educational.html" style="margin: 0 1.5rem; color: #fff; font-size: 1.8rem; text-decoration: none;">Education</a>
+            <a href="gallery.html" style="margin: 0 1.5rem; color: #fff; font-size: 1.8rem; text-decoration: none;">Gallery</a>
+            <a href="contact.html" style="margin: 0 1.5rem; color: #fff; font-size: 1.8rem; text-decoration: none;">Contact</a>
+        </div>
+
+        <!-- Copyright Text -->
+        <div class="copyright" style="font-size: 2rem; margin-top: 2rem;">
+            <p>&copy; 2025 Zana Portfolio. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>
